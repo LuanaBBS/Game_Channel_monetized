@@ -1,0 +1,13 @@
+{
+  "name": "niche-finder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Encontra canais novos de histórias (vídeos longos) performando bem no YouTube, via navegador (Playwright).",
+  "scripts": {
+    "find": "node finder.js",
+    "html": "node build-html.js"
+  },
+  "dependencies": {
+    "playwright": "^1.48.0"
+  }
+}
