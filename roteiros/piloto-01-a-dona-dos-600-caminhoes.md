@@ -3,6 +3,7 @@
 **Formato:** novelinha narrada, vídeo longo (~21 a 22 min de narração, ~2.900 palavras)
 **Público:** 40 a 65+ anos, Brasil
 **Fórmula:** mulher rica e simples é humilhada por quem não sabe quem ela é, depois vem a revelação, e a bondade é recompensada
+**Elenco:** exclusivamente negro, incluindo protagonistas, coadjuvantes e figurantes
 
 ---
 
@@ -17,11 +18,11 @@
 - A Sogra Que Todos Achavam Pobre Entrou na Reunião… E a Noiva Ficou Pálida
 
 **Thumbnail (composição):**
-- **Esquerda:** mulher jovem, loira, vestido brilhante, boca aberta de raiva, apontando o dedo.
-- **Centro e direita:** senhora negra de 67 anos, cabelos grisalhos presos, roupa simples e limpa, olhar sereno e firme.
+- **Esquerda:** Bianca, mulher negra jovem, cabelo longo liso com mechas loiro-mel, maquiagem marcada, vestido dourado brilhante, boca aberta de raiva, apontando o dedo.
+- **Centro e direita:** Dona Conceição, senhora negra de pele retinta, 67 anos, cabelos grisalhos presos em coque baixo, vestido azul-marinho simples, olhar sereno e firme.
 - **Canto direito:** a mão da senhora segurando um molho de chaves de caminhão com um chaveiro escrito "CONCEIÇÃO TRANSPORTES", ou um crachá "PRESIDENTE".
 - **Texto grande (no máximo 4 palavras):** "ELA ERA A DONA" ou "600 CAMINHÕES".
-- **Fundo:** salão de festa desfocado, com convidados segurando celulares.
+- **Fundo:** salão de festa desfocado, com convidados negros elegantes segurando celulares.
 
 **Descrição do vídeo:**
 > Dona Conceição saiu do interior de ônibus para conhecer a noiva do filho. No caminho, uma moça arrogante a humilhou na frente de todos. Horas depois, no jantar de noivado, as duas se reencontraram. O que a noiva não sabia é que aquela senhora de roupa simples tinha construído, do nada, uma das maiores transportadoras do país.
@@ -41,15 +42,20 @@
 
 ## 2. Personagens
 
-| Personagem | Quem é | Função na história |
-|---|---|---|
-| **Dona Conceição Ferreira** (67) | Viúva, nasceu em Goiás. Começou vendendo café na rodoviária e, com o marido, Seu Antônio, construiu a Conceição Transportes, com 600 caminhões. Discreta, nunca aparece em revista. | Protagonista |
-| **Rafael** (34) | Filho único, engenheiro em São Paulo. Bom, mas fraco: quer agradar a noiva. | Arco de redenção |
-| **Bianca Monteiro** (29) | A noiva. Influenciadora, vaidosa, filha de família "tradicional" em decadência. | Antagonista |
-| **Sandra Monteiro** (58) | Mãe de Bianca. Esnobe; a construtora do marido está quase falindo. | Antagonista secundária |
-| **Júlia Monteiro** (22) | Irmã mais nova de Bianca, estudante de enfermagem, gentil. | Aliada, é recompensada |
-| **Tiago** (19) | Garçom do buffet, que trata Dona Conceição com carinho. | Aliado, é recompensado |
-| **Dr. Hélio** (60) | Diretor jurídico da transportadora, homem de confiança da família. | Revelação |
+**Todos os personagens são negros**, incluindo figurantes (passageiros, convidados, garçons, funcionários). A coluna "Aparência" serve para manter o mesmo rosto em todas as cenas: gere uma imagem de referência de cada personagem e use-a em todos os prompts.
+
+| Personagem | Quem é | Aparência (referência visual) | Função |
+|---|---|---|---|
+| **Dona Conceição Ferreira** (67) | Viúva, nasceu em Goiás. Começou vendendo café na rodoviária e, com o marido, construiu a Conceição Transportes, com 600 caminhões. Discreta, nunca aparece em revista. | Pele retinta, cabelos grisalhos crespos presos em coque baixo, olhar doce e firme, brincos pequenos de ouro, vestido azul-marinho simples e casaco bege | Protagonista |
+| **Conceição jovem** (22) | Flashback dos anos 1980. | Pele retinta, tranças sob um lenço colorido, vestido de chita florido | Flashback |
+| **Seu Antônio** (jovem, anos 1980) | Marido falecido, caminhoneiro. | Pele escura, magro, bigode fino, boné, sorriso tímido | Flashback |
+| **Rafael** (34) | Filho único, engenheiro em São Paulo. Bom, mas fraco: quer agradar a noiva. | Pele escura, cabelo bem curto, barba aparada, camisa social | Arco de redenção |
+| **Bianca Monteiro** (29) | A noiva. Influenciadora, vaidosa, filha de família "tradicional" em decadência. | Pele marrom, cabelo longo liso com mechas loiro-mel, maquiagem marcada, roupas de grife, vestido dourado no noivado | Antagonista |
+| **Sandra Monteiro** (58) | Mãe de Bianca. Esnobe; a construtora do marido está quase falindo. | Pele marrom, cabelo curto chanel bem alinhado, colar de pérolas, tailleur elegante | Antagonista secundária |
+| **Roberto Monteiro** (62) | Pai de Bianca, dono da construtora endividada. | Pele escura, têmporas grisalhas, terno escuro, ar cansado | Coadjuvante |
+| **Júlia Monteiro** (22) | Irmã mais nova de Bianca, estudante de enfermagem, gentil. | Pele marrom, black power natural, roupa simples, sorriso gentil | Aliada, é recompensada |
+| **Tiago** (19) | Garçom do buffet, que trata Dona Conceição com carinho. | Pele escura, magro, cabelo raspado baixinho, mochila; no buffet, camisa branca e gravata-borboleta | Aliado, é recompensado |
+| **Dr. Hélio** (60) | Diretor jurídico da transportadora, homem de confiança da família. | Pele retinta, cabelo e barba brancos, óculos de armação fina, terno cinza | Revelação |
 
 ---
 
@@ -511,55 +517,57 @@ Até a próxima história.
 
 ## 4. Lista de cenas e prompts de imagem
 
-> **Consistência dos personagens:** gere primeiro uma imagem de referência de cada personagem e use-a em todas as cenas (recurso de *character reference* no Midjourney ou imagem de referência no Nano Banana / Leonardo). Os prompts estão em inglês porque as ferramentas respondem melhor assim.
+> **Consistência dos personagens:** gere primeiro uma imagem de referência de cada personagem, usando a descrição da coluna "Aparência" da seção 2. Depois use essa imagem em todas as cenas (recurso de *character reference* no Midjourney ou imagem de referência no Nano Banana / Leonardo). Os prompts estão em inglês porque as ferramentas respondem melhor assim. Quando um prompt cita só o nome do personagem (por exemplo, "Dona Conceição"), use a imagem de referência dele.
 >
-> **Estilo base (acrescente ao fim de todo prompt):** `cinematic photo, Brazilian setting, natural warm lighting, 35mm film look, shallow depth of field, realistic, 16:9`
+> **Estilo base (acrescente ao fim de todo prompt):** `all people are Black Brazilians, cinematic photo, Brazilian setting, natural warm lighting, 35mm film look, shallow depth of field, realistic, 16:9`
+>
+> **Dica:** as ferramentas de imagem às vezes "clareiam" figurantes ou mudam o tom de pele entre as cenas. Mantenha "all people are Black Brazilians" em todo prompt e confira cada imagem antes de usar.
 
 | Cena | Imagem | Prompt (inglês) |
 |---|---|---|
-| 1 | Café derramado no casaco da senhora, no ônibus | Coffee spilling on the coat of a dignified 67-year-old Black Brazilian woman with grey hair in a bun, seated on an intercity bus, arrogant young blonde woman in expensive dress holding the cup |
-| 2 | Senhora em pé no fundo do ônibus | Elderly Black woman standing at the back of a crowded intercity bus holding a cloth bag, passengers looking away |
-| 3 | Sacola de pano com doce de leite e chaveiro antigo | Close-up of a simple cloth bag with a glass jar of homemade doce de leite and an old worn truck keychain |
-| 4 | Rodoviária de Goiás nos anos 1980 | Young Black Brazilian woman, 22, in a floral chita dress selling coffee from a thermos at a 1980s bus station in Goiás, truck drivers, dawn light |
-| 5 | Caminhoneiro tímido pedindo café | Shy thin Brazilian truck driver in the 1980s smiling at a young woman selling coffee, bus station, vintage photo |
-| 6 | Primeiro caminhão azul | Old blue 1980s truck with a dented door, hand-painted white letters on the side, young couple proudly standing next to it, rainy December |
-| 7 | Frota de caminhões | Large fleet of modern trucks in a logistics yard, all with the same company name on the side, aerial view |
-| 8 | Casa simples, tacho de cobre | Elderly Black woman stirring doce de leite in a copper pot in a simple rural kitchen in Goiás, morning light |
-| 9 | Mãe e filho menino | Black Brazilian mother in her 30s talking to her 8-year-old son on a simple porch, 1990s |
-| 10 | Rafael e Bianca em SP | Handsome Black Brazilian engineer, 34, with an elegant blonde influencer, 29, at a São Paulo rooftop bar |
-| 11 | Ligação ao telefone | Elderly woman on an old phone in a simple kitchen, thoughtful expression |
-| 12 | Senhora entrando no ônibus de linha | Elderly Black woman with a cloth bag boarding an intercity bus at a Brazilian bus station, early morning |
-| 13 | Moça arrogante apontando o bilhete | Arrogant young blonde woman with sunglasses pointing at a bus seat, angry, holding a coffee cup, elderly woman seated |
-| 14 | Rapaz oferecendo lugar | Kind skinny young man, 19, with a backpack offering his bus seat to an elderly Black woman, warm smile |
-| 15 | Salão de festa nos Jardins | Luxurious engagement party hall in São Paulo with crystal chandeliers and white flowers, elegant guests |
-| 16 | Rafael abraçando a mãe | Young man hugging his elderly mother in a navy blue dress at the entrance of an elegant party |
-| 17 | Bianca reconhece a sogra | Young blonde woman in a golden dress frozen in shock, forced smile, recognizing an elderly woman |
-| 18 | Mesa no canto, perto da cozinha | Elderly woman sitting alone at a small table near the kitchen door of a luxurious party, slightly sad |
-| 19 | Foto de família sem ela | Elegant family posing for a photo in front of a flower wall while an elderly woman holds the phone to take the picture |
-| 20 | Garçom trazendo prato | Young waiter in a bow tie bringing a carefully plated dish to an elderly woman at a corner table |
-| 21 | Júlia conversando com a senhora | Kind young woman, 22, laughing while talking with an elderly Black woman at a party table |
-| 22 | Mãe e filha conspirando no corredor | Mother and blonde daughter whispering in a dim hallway of a party venue, scheming expressions |
-| 23 | Close de Sandra | Close-up of a 58-year-old elegant snobbish woman whispering, pearls, cold eyes |
-| 24 | Mensagem no celular trincado | Close-up of an elderly woman's hands typing on an old phone with a cracked screen |
-| 25 | Júlia gravando escondida | Young woman secretly recording with her phone behind a corner in a hallway, nervous |
-| 26 | Almoço mãe e filho | Mother and adult son having lunch at a simple restaurant, son looking down ashamed |
-| 27 | Foto antiga no painel do caminhão | Old photo of a young woman taped to the dashboard of a vintage truck |
-| 28 | Rafael ouvindo o áudio | Man sitting on the edge of a bed at night listening to a phone, tears in his eyes |
-| 29 | Sede da transportadora | Modern 20-story glass headquarters of a logistics company in São Paulo with trucks in the yard |
-| 30 | Sala de reuniões | Executive boardroom with a dark wood table and São Paulo skyline view, family in suits waiting |
-| 31 | A porta se abre | Elderly Black woman in a navy dress entering a boardroom, holding an old truck keychain, calm and powerful |
-| 32 | Na cabeceira da mesa | Elderly woman sitting at the head of a boardroom table, serene, executives listening |
-| 33 | Bianca implorando | Young blonde woman with tears pleading across a boardroom table, phone on the floor |
-| 34 | Dr. Hélio abrindo a pasta | Grey-haired lawyer in a suit calmly opening a folder of documents |
-| 35 | Roberto de cabeça baixa | Middle-aged businessman lowering his head in shame at a boardroom table |
-| 36 | A decisão | Elderly woman gesturing to her lawyer, determined but kind |
-| 37 | Aliança na mesa | Engagement ring placed on a dark wood table next to an old truck keychain |
-| 38 | Tiago ao telefone | Young man on the phone in a small apartment, surprised and happy |
-| 39 | Bilhete na mesa | Handwritten note on an office desk with a company badge saying "estagiário" |
-| 40 | Júlia abraçando a senhora | Young woman in tears hugging an elderly Black woman holding a jar of doce de leite |
-| 41 | Café às cinco da manhã | Mother and son having coffee at dawn in a simple rural kitchen, warm light |
+| 1 | Café derramado no casaco da senhora, no ônibus | Coffee spilling on the beige coat of Dona Conceição (67-year-old dark-skinned Black Brazilian woman, grey coily hair in a low bun) seated on an intercity bus, Bianca (young Black Brazilian woman, long straight honey-blonde highlighted hair, sunglasses, designer dress) holding the cup, Black passengers around |
+| 2 | Senhora em pé no fundo do ônibus | Dona Conceição standing at the back of a crowded intercity bus holding a cloth bag, Black Brazilian passengers looking away |
+| 3 | Sacola de pano com doce de leite e chaveiro antigo | Close-up of a dark-skinned elderly woman's hands holding a simple cloth bag with a glass jar of homemade doce de leite and an old worn truck keychain |
+| 4 | Rodoviária de Goiás nos anos 1980 | Young Conceição (22-year-old dark-skinned Black Brazilian woman, braids under a colorful headscarf, floral chita dress) selling coffee from a thermos at a 1980s bus station in Goiás, Black truck drivers, dawn light |
+| 5 | Caminhoneiro tímido pedindo café | Young Antônio (slim Black Brazilian truck driver, thin mustache, cap, shy smile) asking young Conceição for coffee at a 1980s bus station, vintage photo |
+| 6 | Primeiro caminhão azul | Old blue 1980s truck with a dented door and hand-painted white letters on the side, young Black couple (Antônio and Conceição) proudly standing next to it, rainy December |
+| 7 | Frota de caminhões | Large fleet of modern trucks in a logistics yard, all with the same company name on the side, Black Brazilian drivers in uniform, aerial view |
+| 8 | Casa simples, tacho de cobre | Dona Conceição stirring doce de leite in a copper pot in a simple rural kitchen in Goiás, morning light |
+| 9 | Mãe e filho menino | Conceição in her 30s (dark-skinned Black Brazilian woman) talking to her 8-year-old Black son on a simple porch, 1990s |
+| 10 | Rafael e Bianca em SP | Rafael (34-year-old dark-skinned Black Brazilian man, short hair, trimmed beard, dress shirt) with Bianca (29-year-old Black Brazilian influencer, long straight honey-blonde highlighted hair, glamorous makeup) at a São Paulo rooftop bar, Black guests around |
+| 11 | Ligação ao telefone | Dona Conceição on an old phone in a simple kitchen, thoughtful expression |
+| 12 | Senhora entrando no ônibus de linha | Dona Conceição with a cloth bag boarding an intercity bus at a Brazilian bus station, Black passengers, early morning |
+| 13 | Moça arrogante apontando o bilhete | Bianca with sunglasses pointing angrily at a bus seat, holding a coffee cup, Dona Conceição seated calmly |
+| 14 | Rapaz oferecendo lugar | Tiago (slim 19-year-old dark-skinned Black Brazilian man, buzz cut, backpack) offering his bus seat to Dona Conceição, warm smile |
+| 15 | Salão de festa nos Jardins | Luxurious engagement party hall in São Paulo with crystal chandeliers and white flowers, elegant Black Brazilian guests |
+| 16 | Rafael abraçando a mãe | Rafael hugging Dona Conceição (navy blue dress) at the entrance of an elegant party, Black guests in the background |
+| 17 | Bianca reconhece a sogra | Bianca in a golden dress frozen in shock with a forced smile, recognizing Dona Conceição, Black friends around her |
+| 18 | Mesa no canto, perto da cozinha | Dona Conceição sitting alone at a small table near the kitchen door of a luxurious party, slightly sad |
+| 19 | Foto de família sem ela | Elegant Black family (Bianca, Rafael, Sandra, Roberto) posing in front of a flower wall while Dona Conceição holds the phone to take the picture |
+| 20 | Garçom trazendo prato | Tiago as a waiter (white shirt, bow tie) bringing a carefully plated dish to Dona Conceição at a corner table |
+| 21 | Júlia conversando com a senhora | Júlia (22-year-old Black Brazilian woman, natural afro hair, simple clothes, gentle smile) laughing while talking with Dona Conceição at a party table |
+| 22 | Mãe e filha conspirando no corredor | Sandra (58-year-old Black Brazilian woman, sleek short bob, pearls, elegant suit) and Bianca whispering in a dim hallway of a party venue, scheming expressions |
+| 23 | Close de Sandra | Close-up of Sandra whispering, pearls, cold eyes |
+| 24 | Mensagem no celular trincado | Close-up of Dona Conceição's dark-skinned hands typing on an old phone with a cracked screen |
+| 25 | Júlia gravando escondida | Júlia secretly recording with her phone behind a corner in a hallway, nervous |
+| 26 | Almoço mãe e filho | Dona Conceição and Rafael having lunch at a simple restaurant, Rafael looking down ashamed |
+| 27 | Foto antiga no painel do caminhão | Old photo of young Conceição (dark-skinned Black woman with braids) taped to the dashboard of a vintage truck |
+| 28 | Rafael ouvindo o áudio | Rafael sitting on the edge of a bed at night listening to a phone, tears in his eyes |
+| 29 | Sede da transportadora | Modern 20-story glass headquarters of a logistics company in São Paulo with trucks in the yard, Black employees walking |
+| 30 | Sala de reuniões | Executive boardroom with a dark wood table and São Paulo skyline view, Roberto (62-year-old Black Brazilian man, grey temples, dark suit), Sandra and Bianca waiting |
+| 31 | A porta se abre | Dona Conceição in a navy dress entering a boardroom, holding an old truck keychain, calm and powerful |
+| 32 | Na cabeceira da mesa | Dona Conceição sitting at the head of a boardroom table, serene, Black executives listening |
+| 33 | Bianca implorando | Bianca with tears pleading across a boardroom table, phone on the floor |
+| 34 | Dr. Hélio abrindo a pasta | Dr. Hélio (60-year-old dark-skinned Black Brazilian lawyer, white hair and white beard, thin glasses, grey suit) calmly opening a folder of documents |
+| 35 | Roberto de cabeça baixa | Roberto lowering his head in shame at a boardroom table |
+| 36 | A decisão | Dona Conceição gesturing to Dr. Hélio, determined but kind |
+| 37 | Aliança na mesa | Engagement ring placed on a dark wood table next to an old truck keychain, Rafael's dark-skinned hand pulling away |
+| 38 | Tiago ao telefone | Tiago on the phone in a small apartment, surprised and happy |
+| 39 | Bilhete na mesa | Handwritten note on an office desk with a company badge saying "estagiário", Tiago smiling in the background |
+| 40 | Júlia abraçando a senhora | Júlia in tears hugging Dona Conceição, who holds a jar of doce de leite |
+| 41 | Café às cinco da manhã | Dona Conceição and Rafael having coffee at dawn in a simple rural kitchen, warm light |
 | 42 | Ônibus na estrada ao entardecer | Intercity bus on a Brazilian highway at sunset |
-| 43 | Senhora olhando o horizonte | Elderly woman on a porch looking at the horizon at golden hour, peaceful |
+| 43 | Senhora olhando o horizonte | Dona Conceição on a porch looking at the horizon at golden hour, peaceful |
 | 44 | Tela final | Warm blurred background with space for subscribe button and end screen |
 
 > **Dica de edição:** mantenha cada imagem entre 10 e 20 segundos, com zoom lento (efeito Ken Burns). Nas cenas de tensão (13, 17, 22, 31 e 37), use zoom mais lento e silêncio na música. Para cobrir ~22 minutos, crie de 2 a 3 variações de enquadramento por cena (plano aberto, médio e close), chegando a cerca de 90 a 120 imagens.
