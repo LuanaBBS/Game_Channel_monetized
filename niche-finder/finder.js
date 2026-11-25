@@ -135,7 +135,7 @@ function evaluate(ch, hit) {
   const p = cfg.performance;
   const reasons = [];
   const channelLang = detectLang(vids.map(v => v.title));
-  if (channelLang !== hit.lang) reasons.push(`idioma dos títulos: ${channelLang || 'outro'}`);
+  if (hit.lang !== 'other' && channelLang !== hit.lang) reasons.push(`idioma dos títulos: ${channelLang || 'outro'}`);
   if (!ch.complete) reasons.push('canal com muitos vídeos (provavelmente mais antigo)');
   if (firstAge == null || firstAge > cfg.maxChannelAgeDays) reasons.push(`primeiro vídeo há ${firstAge == null ? '?' : Math.round(firstAge)} dias`);
   if (long.length < cfg.minLongVideos) reasons.push(`só ${long.length} vídeos longos`);
@@ -173,43 +173,28 @@ async function pool(items, n, fn) {
   }));
 }
 
-(async () => {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
-  const browser = await chromium.launch();
-  const context = await browser.newContext({ locale: 'en-US', viewport: { width: 1280, height: 900 } });
-
-  // 1) Buscas
-  const hits = [];
-  const page = await context.newPage();
-  for (const lang of langs) {
-    for (const [query, niche] of cfg.languages[lang].queries) {
-      for (const kind of Object.keys(SEARCH_PARAMS)) {
-        try {
-          const rows = await searchOne(page, lang, query, niche, kind);
-          hits.push(...rows);
-          log(`[${lang}] "${query}" (${kind}): ${rows.length} vídeos`);
-        } catch (e) { log(`[${lang}] "${query}" (${kind}) falhou: ${e.message.split('\n')[0]}`); }
-      }
-    }
-  }
-  await page.close();
-  fs.writeFileSync(path.join(DATA_DIR, 'search-hits.json'), JSON.stringify(hits, null, 1));
-
-  // 2) Pré-filtro: vídeo recente (<= idade máxima) e com views mínimas
-  const byChannel = new Map();
+// Agrupa os vídeos encontrados por canal. Retorna [canais no idioma pedido, melhores canais de outros idiomas].
+function pickCandidates(hits) {
+  const own = new Map(), other = new Map();
   for (const h of hits) {
     if (!h.channelId) continue;
     const age = ageDays(h.published);
-    if (age == null || age > cfg.maxChannelAgeDays || count(h.views) < cfg.minSearchVideoViews) continue;
-    if (detectLang([h.title]) !== h.lang) continue; // descarta vídeos em outros idiomas
-    const c = byChannel.get(h.channelId) || { channelId: h.channelId, channelName: h.channelName, lang: h.lang, niche: h.niche, queries: new Set() };
-    c.queries.add(`${h.query}`);
-    byChannel.set(h.channelId, c);
+    const views = count(h.views);
+    if (age == null || age > cfg.maxChannelAgeDays || views < cfg.minSearchVideoViews) continue;
+    const lang = detectLang([h.title]);
+    const target = lang === h.lang ? own : other;
+    const c = target.get(h.channelId) || { channelId: h.channelId, channelName: h.channelName, lang: lang === h.lang ? h.lang : 'other', niche: h.niche, queries: new Set(), bestHitViews: 0 };
+    c.queries.add(h.query);
+    c.bestHitViews = Math.max(c.bestHitViews, views);
+    target.set(h.channelId, c);
   }
-  const candidates = [...byChannel.values()].map(c => ({ ...c, queries: [...c.queries] }));
-  log(`${hits.length} vídeos encontrados, ${candidates.length} canais para analisar`);
+  for (const id of own.keys()) other.delete(id);
+  const norm = m => [...m.values()].map(c => ({ ...c, queries: [...c.queries] }));
+  const others = norm(other).sort((a, b) => b.bestHitViews - a.bestHitViews).slice(0, cfg.otherLanguages.maxChannels);
+  return [norm(own), others];
+}
 
-  // 3) Analisa cada canal
+async function analyze(context, candidates) {
   const results = [];
   await pool(candidates, cfg.concurrency, async (hit, idx) => {
     const p = await context.newPage();
@@ -222,6 +207,49 @@ async function pool(items, n, fn) {
       log(`(${idx + 1}/${candidates.length}) erro em ${hit.channelId}: ${e.message.split('\n')[0]}`);
     } finally { await p.close(); }
   });
+  return results;
+}
+
+(async () => {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+  const extrasOnly = process.argv.includes('--extras-only');
+  const browser = await chromium.launch();
+  const context = await browser.newContext({ locale: 'en-US', viewport: { width: 1280, height: 900 } });
+
+  // 1) Buscas (ou reaproveita as já salvas com --extras-only)
+  let hits = [];
+  if (extrasOnly) {
+    hits = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'search-hits.json'), 'utf8'));
+  } else {
+    const page = await context.newPage();
+    for (const lang of langs) {
+      for (const [query, niche] of cfg.languages[lang].queries) {
+        for (const kind of Object.keys(SEARCH_PARAMS)) {
+          try {
+            const rows = await searchOne(page, lang, query, niche, kind);
+            hits.push(...rows);
+            log(`[${lang}] "${query}" (${kind}): ${rows.length} vídeos`);
+          } catch (e) { log(`[${lang}] "${query}" (${kind}) falhou: ${e.message.split('\n')[0]}`); }
+        }
+      }
+    }
+    await page.close();
+    fs.writeFileSync(path.join(DATA_DIR, 'search-hits.json'), JSON.stringify(hits, null, 1));
+  }
+
+  // 2) Pré-filtro
+  const [own, others] = pickCandidates(hits);
+  log(`${hits.length} vídeos encontrados, ${own.length} canais no idioma pedido + ${others.length} melhores de outros idiomas`);
+
+  // 3) Analisa cada canal
+  let results;
+  if (extrasOnly) {
+    const prev = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'channels.json'), 'utf8')).channels;
+    const done = new Set(prev.map(c => c.channelId));
+    results = prev.concat(await analyze(context, others.filter(c => !done.has(c.channelId))));
+  } else {
+    results = await analyze(context, own.concat(others));
+  }
   await browser.close();
 
   const out = { generatedAt: new Date().toISOString(), criteria: cfg, channels: results };

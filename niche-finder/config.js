@@ -25,6 +25,10 @@ module.exports = {
   // Quantas vezes rolar a página de busca (cada rolagem carrega cerca de 20 vídeos).
   searchScrolls: 3,
 
+  // Canais em outros idiomas (hindi, alemão, árabe...) que apareceram nas buscas:
+  // analisa só os N com mais views, para a pesquisa não demorar.
+  otherLanguages: { maxChannels: 25 },
+
   // Páginas de canal abertas em paralelo.
   concurrency: 4,
 

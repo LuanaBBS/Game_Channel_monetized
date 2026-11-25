@@ -77,7 +77,7 @@ footer { margin-top: 32px; color: var(--muted); font-size: 13px; }
     <p>Canais novos (primeiro vídeo há até 3 semanas) de histórias emocionantes, novelinhas e histórias narradas, só com vídeos longos e já performando bem.</p>
   </header>
   <div class="toolbar">
-    <label class="field">Idioma<select id="lang"><option value="">Todos</option><option value="pt">Português</option><option value="en">English</option><option value="es">Español</option></select></label>
+    <label class="field">Idioma<select id="lang"><option value="">Todos</option><option value="pt">Português</option><option value="en">English</option><option value="es">Español</option><option value="other">Outros idiomas</option></select></label>
     <label class="field">Nicho<select id="niche"><option value="">Todos</option></select></label>
     <label class="field">Ordenar por<select id="sort">
       <option value="viewsPerDay">Views por dia</option>
@@ -95,7 +95,7 @@ footer { margin-top: 32px; color: var(--muted); font-size: 13px; }
 <script id="data" type="application/json">${payload}</script>
 <script>
 const DATA = JSON.parse(document.getElementById('data').textContent);
-const LANG = { pt: 'Português', en: 'English', es: 'Español' };
+const LANG = { pt: 'Português', en: 'English', es: 'Español', other: 'Outro idioma' };
 const fmt = n => n >= 1e6 ? (n / 1e6).toFixed(1).replace('.0', '') + ' mi' : n >= 1e3 ? (n / 1e3).toFixed(1).replace('.0', '') + ' mil' : String(n);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const $ = id => document.getElementById(id);

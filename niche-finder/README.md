@@ -23,12 +23,14 @@ Ao final, abra `niche-finder/index.html` no navegador.
 
 Para rodar só alguns idiomas: `node finder.js --langs=pt,es`
 
+Para analisar só os melhores canais de outros idiomas, reaproveitando as buscas já feitas: `node finder.js --extras-only`
+
 Para regerar só a página a partir dos dados já coletados: `node build-html.js`
 
 ## Como funciona
 
 1. **Busca**: para cada termo de `config.js`, pesquisa no YouTube com os filtros "este mês", "vídeos", duração "4–20 min" e "> 20 min", ordenando por visualizações.
-2. **Pré-filtro**: fica só com vídeos de até ~3 semanas, com um mínimo de views e com título no idioma da busca.
+2. **Pré-filtro**: fica só com vídeos de até ~3 semanas e com um mínimo de views. Canais com títulos em outros idiomas (hindi, alemão, árabe...) não são descartados: entram os 25 com mais views (`otherLanguages.maxChannels`), no filtro "Outros idiomas".
 3. **Análise do canal**: abre a aba *Vídeos* e a aba *Shorts* de cada canal e calcula a data do primeiro vídeo, o total de views, a média por vídeo, as views por dia, o melhor vídeo e a quantidade de shorts.
 4. **Aprovação**: o canal entra na página se passar em todos os critérios de `config.js`.
 5. **Página**: gera `index.html` com os cards, filtros por idioma e nicho, e ordenação.
@@ -44,6 +46,7 @@ Os dados brutos ficam em `data/channels.json`, com os canais descartados e o mot
 | `minLongVideos` | 2 | Mínimo de vídeos longos. |
 | `minLongVideoSeconds` | 480 | Duração mínima para contar como vídeo longo (8 min). |
 | `maxShortsRatio` | 0.5 | Proporção máxima de shorts em relação aos vídeos longos. |
+| `otherLanguages.maxChannels` | 25 | Quantos canais de outros idiomas analisar (os com mais views). |
 | `languages.*.queries` | — | Termos de busca e o nicho de cada um. |
 
 ## Limitações
